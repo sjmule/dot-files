@@ -112,7 +112,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# now for some custom stuff
+#### now for some custom stuff
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then

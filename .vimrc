@@ -42,6 +42,9 @@ syntax on
 " Better command-line completion
 set wildmenu
 
+" Better file finding, search subdirectories
+set path+=**
+
 " Show partial commands in the last line of the screen
 set showcmd
 
@@ -109,10 +112,10 @@ set statusline+=%F\ col:\ %c,\ line\ count:\ %L
 " The Silver Searcher
 if executable('ag')
   " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+  set grepprg=ag\ -i\ --hidden\ --nogroup\ --nocolor
 
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -i --hidden -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
