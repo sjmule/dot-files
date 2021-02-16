@@ -114,6 +114,9 @@ fi
 
 #### now for some custom stuff
 
+# enable Vim modes
+set -o vi
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
@@ -150,13 +153,15 @@ unset env
 # end start ssh-agent
 
 export EDITOR=vim
+# manage all vms on the system
+export LIBVIRT_DEFAULT_URI='qemu:///system'
 
 # sensitive exports, api keys and the like
 if [ -f ~/.secrets ]; then
     source ~/.secrets
 fi
 
- # Don't clear the screen when quitting man
+# Don't clear the screen when quitting man
 #export MANPAGER="less -X"
 
 # git branch completion
